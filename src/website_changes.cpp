@@ -23,9 +23,10 @@ int main() {
   std::vector<std::string> current_title_col = doc.GetColumn<std::string>("current_title");
   std::vector<std::string> website_title_col = doc.GetColumn<std::string>("website_title");
 
-  std::vector<int> website_index_to_ignore;
 
-  
+
+  // Website Changes:
+  std::vector<int> website_index_to_ignore;
   for (int i= 0 ; i< current_person_col.size(); i++) {
     bool name_matched = false;
     const std::string current_person_val = current_person_col[i];
@@ -83,6 +84,9 @@ int main() {
   for(auto value: output_website_directions) {
     std::cout << value << std::endl;
   }
+
+
+
 
 
 
