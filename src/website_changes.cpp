@@ -21,18 +21,19 @@ int main() {
   for (int i= 0 ; i< current_person_col.size(); i++) {
     bool name_matched = false;
     std::cout << "Current Person: " << current_person_col[i] << std::endl;
-    std::string current_person_val = current_person_col[i];
-    std::string current_title_val = current_title_col[i];
+    const std::string current_person_val = current_person_col[i];
+    const std::string current_title_val = current_title_col[i];
 
     for (int j = 0; j < website_person_col.size(); j++) {
       std::cout << "Website Member: " << website_person_col[j] << std::endl; 
-      std::string website_person_val = website_person_col[j];
-      std::string website_title_val = website_title_col[j];
+      const std::string website_person_val = website_person_col[j];
+      const std::string website_title_val = website_title_col[j];
 
       if (current_person_val == website_person_val) {
         //want to remove member from both vectors:
-        website_person_col.erase(website_person_col.begin()+j);
-        current_person_col.erase(current_person_col.begin()+i);
+        //website_person_col.erase(website_person_col.begin()+(j-1));
+        //current_person_col.erase(current_person_col.begin()+(i-1));
+        //
         std::cout << "We got a name match!" <<std::endl; 
         name_matched = true;
 
@@ -51,7 +52,6 @@ int main() {
         }
 
       } 
-      continue;
     }
 
     if (!name_matched) {
